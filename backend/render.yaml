@@ -1,0 +1,28 @@
+# Render 部署配置文件
+# 后端服务
+
+services:
+  - type: web
+    name: smart-campus-api
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+
+  - type: psql
+    name: smart-campus-db
+    plan: free
+    region: singapore
+    databaseName: smart_campus
+    ipAllowList: []

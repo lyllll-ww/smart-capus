@@ -1,0 +1,163 @@
+/**
+ * 全局样式文件
+ * 定义应用的全局样式变量和通用样式
+ */
+
+/* 引入Element Plus SCSS变量覆盖 */
+$--colors: (
+    "primary": ("base": #409eff),
+    "success": ("base": #67c23a),
+    "warning": ("base": #e6a23c),
+    "danger": ("base": #f56c6c),
+    "info": ("base": #909399)
+);
+
+/* 全局重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 14px;
+    color: #303133;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+    height: 100%;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c0c4cc;
+    border-radius: 3px;
+    
+    &:hover {
+        background: #909399;
+    }
+}
+
+/* 页面标题样式 */
+.page-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ebeef5;
+    
+    h2 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #303133;
+    }
+}
+
+/* 卡片容器样式 */
+.card-container {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* 表格操作按钮间距 */
+.table-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* 表单项间距 */
+.form-container {
+    .el-form-item {
+        margin-bottom: 18px;
+    }
+}
+
+/* 搜索表单样式 */
+.search-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
+    
+    .el-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+
+/* 分页容器 */
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* 空状态样式 */
+.empty-state {
+    padding: 60px 0;
+    text-align: center;
+    
+    .empty-icon {
+        font-size: 64px;
+        color: #c0c4cc;
+        margin-bottom: 16px;
+    }
+    
+    .empty-text {
+        color: #909399;
+        font-size: 14px;
+    }
+}
+
+/* 统计卡片样式 */
+.stat-card {
+    text-align: center;
+    padding: 20px;
+    
+    .stat-icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    
+    .stat-value {
+        font-size: 28px;
+        font-weight: bold;
+        color: #303133;
+    }
+    
+    .stat-label {
+        font-size: 14px;
+        color: #909399;
+        margin-top: 8px;
+    }
+}
+
+/* 动画样式 */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .search-form .el-row {
+        flex-direction: column;
+    }
+}
