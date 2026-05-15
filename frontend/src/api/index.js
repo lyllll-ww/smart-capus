@@ -9,7 +9,7 @@ import router from '@/router'
 
 // 创建axios实例，配置基础URL和超时时间
 const service = axios.create({
-    baseURL: '/api',  // 实际请求会被代理到 http://localhost:3000/api
+    baseURL: import.meta.env.VITE_API_BASE_URL || '/api',  // 开发环境用代理，生产环境用实际地址
     timeout: 10000,
     headers: { 'Content-Type': 'application/json' }
 })
